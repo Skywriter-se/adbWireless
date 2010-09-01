@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/background" android:padding="10px">
+
+
+<TextView android:id="@+id/tv_top_text" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/top_text" android:textColor="#ffffff" android:paddingTop="10px" android:paddingBottom="20px"/>
+
+
+<LinearLayout android:id="@+id/LinearLayout01" android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_gravity="center">
+<ImageView android:id="@+id/iv_button" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/bt_on"></ImageView>
+</LinearLayout>
+
+
+
+<TextView android:id="@+id/tv_footer_1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/footer_text_1" android:paddingTop="20px"></TextView>
+<TextView android:id="@+id/tv_footer_2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="adb connect 192.168.1.106:5555" android:textStyle="bold" android:layout_gravity="center" android:paddingBottom="10px" android:paddingTop="10px" android:textColor="#eee"></TextView>
+<TextView android:id="@+id/tv_footer_3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/footer_text_3"></TextView>
+
+
+</LinearLayout>

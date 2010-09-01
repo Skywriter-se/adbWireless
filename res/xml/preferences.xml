@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+	android:persistent="true">
+
+	<PreferenceCategory android:title="@string/settings_title">
+
+		<CheckBoxPreference android:key="@string/pref_vibrate_key"
+			android:title="@string/vibrate" android:defaultValue="@string/default_vibrate"
+			android:summary="@string/server_vibrate" />
+			
+		<CheckBoxPreference android:key="@string/pref_sound_key"
+			android:title="@string/sound" android:defaultValue="@string/default_sound"
+			android:summary="@string/server_sound" />
+			
+		<CheckBoxPreference android:key="@string/pref_noti_key"
+			android:title="@string/notification" android:defaultValue="@string/default_noti"
+			android:summary="@string/server_noti" />
+
+	</PreferenceCategory>
+
+</PreferenceScreen>
