@@ -1,0 +1,13 @@
+adbWireless enable ADB wireless connection to connect to the phone as if connected by USB.
+
+used a method already known to enable the wireless connection through:
+
+03-17-2010: http://goo.gl/iK77
+04-10-2010: http://goo.gl/Z03r
+04-12-2010: http://goo.gl/GoyF
+
+1.2 Update
+
+- Support for QVGA dev. (240x320)
+
+Rooted Phone Only!!!
