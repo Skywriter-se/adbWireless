@@ -16,6 +16,10 @@
 		<CheckBoxPreference android:key="@string/pref_noti_key"
 			android:title="@string/notification" android:defaultValue="@string/default_noti"
 			android:summary="@string/server_noti" />
+			
+		<CheckBoxPreference android:key="@string/pref_haptic_key"
+			android:title="@string/haptic" android:defaultValue="@string/default_haptic"
+			android:summary="@string/server_haptic" />
 
 	</PreferenceCategory>
 

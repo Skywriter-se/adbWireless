@@ -13,7 +13,8 @@ public class ManagePreferences extends PreferenceActivity
 	private CheckBoxPreference mPreferenceVibrate;
 	private CheckBoxPreference mPreferenceSound;
 	private CheckBoxPreference mPreferenceNoti;
-    private SharedPreferences mPreferences;
+	private CheckBoxPreference mPreferenceHaptic;
+	private SharedPreferences mPreferences;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState)
@@ -24,6 +25,7 @@ public class ManagePreferences extends PreferenceActivity
 		mPreferenceVibrate = (CheckBoxPreference) findPreference(getResources().getString(R.string.pref_vibrate_key));
 		mPreferenceSound = (CheckBoxPreference) findPreference(getResources().getString(R.string.pref_sound_key));
 		mPreferenceNoti = (CheckBoxPreference) findPreference(getResources().getString(R.string.pref_noti_key));
+		mPreferenceNoti = (CheckBoxPreference) findPreference(getResources().getString(R.string.pref_haptic_key));
 		
 	}
 }

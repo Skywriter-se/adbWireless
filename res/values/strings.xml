@@ -30,6 +30,9 @@
     
     <string name="settings_title">Preferences</string>
     
+    <string name="Turning_on">Turning on wireless connection</string>
+    <string name="Turning_off">Turning off wireless connection</string>
+    
     <!-- Settings -->
 	<string name="vibrate">Vibrate</string>
 	<string name="server_vibrate">When the connection active</string>
@@ -39,17 +42,22 @@
 	
 	<string name="notification">Notification</string>
 	<string name="server_noti">When the connection active</string>
+	
+	<string name="haptic">Haptic feedback</string>
+	<string name="server_haptic">On button press</string>
     
 	<!-- Defaults -->
 	<string name="default_port">8085</string>
 	<string name="default_vibrate">true</string>
 	<string name="default_sound">true</string>
 	<string name="default_noti">true</string>
+	<string name="default_haptic">true</string>
 	
 	<!-- Keys -->
 	<string name="pref_port_key">key_port</string>
 	<string name="pref_vibrate_key">key_vibrate</string>
 	<string name="pref_sound_key">key_sound</string>
 	<string name="pref_noti_key">key_noti</string>
+	<string name="pref_haptic_key">key_haptic</string>
     
 </resources>

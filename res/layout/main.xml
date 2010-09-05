@@ -21,4 +21,5 @@
 <TextView android:id="@+id/tv_footer_3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/footer_text_3"></TextView>
 
 
+
 </LinearLayout>
