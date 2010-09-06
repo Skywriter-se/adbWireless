@@ -1,4 +1,5 @@
 package siir.es.adbWireless;
+//Skywriter is testing Commit from eclips
 
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
@@ -51,12 +52,14 @@ public class adbWireless extends Activity {
 
 	ProgressDialog spinner;
 
+	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
 		setContentView(R.layout.main);
 
+		
 		spinner = new ProgressDialog(adbWireless.this);
 
 		this.iv_button = (ImageView) findViewById(R.id.iv_button);
