@@ -1,5 +1,4 @@
 package siir.es.adbWireless;
-//Skywriter is testing Commit from eclips
 
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
@@ -27,6 +26,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class adbWireless extends Activity {
 
@@ -37,6 +37,7 @@ public class adbWireless extends Activity {
 	private NotificationManager mNotificationManager;
 
 	private static boolean mState = false;
+	private boolean wifiState;
 
 	private TextView tv_footer_1;
 	private TextView tv_footer_2;
@@ -52,14 +53,12 @@ public class adbWireless extends Activity {
 
 	ProgressDialog spinner;
 
-	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
 		setContentView(R.layout.main);
 
-		
 		spinner = new ProgressDialog(adbWireless.this);
 
 		this.iv_button = (ImageView) findViewById(R.id.iv_button);
@@ -72,10 +71,10 @@ public class adbWireless extends Activity {
 				.getSystemService(Context.WIFI_SERVICE);
 		this.mNotificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
 
-		SharedPreferences settings = getSharedPreferences("wireless", 0);
-		mState = settings.getBoolean("mState", false);
+		// SharedPreferences settings = getSharedPreferences("wireless", 0);
+		// mState = settings.getBoolean("mState", false);
 
-		updateState();
+		// updateState();
 
 		if (!hasRootPermission()) {
 			// Log.d(MSG_TAG, "Not Root!");
@@ -97,27 +96,17 @@ public class adbWireless extends Activity {
 
 		if (!checkWifiState()) {
 			// Log.d(MSG_TAG, "Not Wifi!");
-			AlertDialog.Builder builder = new AlertDialog.Builder(this);
-			builder.setMessage(getString(R.string.no_wifi))
-					.setCancelable(true)
-					.setPositiveButton(getString(R.string.button_exit),
-							new DialogInterface.OnClickListener() {
-								public void onClick(DialogInterface dialog,
-										int id) {
-									adbWireless.this.finish();
-								}
-							})
-					.setNegativeButton(R.string.button_continue,
-							new DialogInterface.OnClickListener() {
-								public void onClick(DialogInterface dialog,
-										int id) {
-									dialog.cancel();
-								}
-							});
-			builder.setIcon(android.R.drawable.ic_dialog_alert);
-			builder.create();
-			builder.setTitle(R.string.no_wifi_title);
-			builder.show();
+			wifiState=false;
+			saveWiFiState(wifiState);
+			
+			if (prefsWiFiOn()) {
+				enableWiFi(true);
+			} else {
+				WiFidialog();
+			}
+		}else {
+			wifiState=true;
+			saveWiFiState(wifiState);
 		}
 
 		this.iv_button.setOnClickListener(new OnClickListener() {
@@ -131,6 +120,7 @@ public class adbWireless extends Activity {
 					if (!mState) {
 						spinner.setMessage(getString(R.string.Turning_on));
 						spinner.show();
+
 						adbStart();
 
 					} else {
@@ -152,19 +142,71 @@ public class adbWireless extends Activity {
 
 	}
 
+	private void saveWiFiState(boolean wifiState){
+		
+		SharedPreferences settings = getSharedPreferences("wireless", 0);
+		SharedPreferences.Editor editor = settings.edit();
+		editor.putBoolean("wifiState", wifiState);
+		editor.commit();
+	}
+	
+	private void WiFidialog() {
+
+		AlertDialog.Builder builder = new AlertDialog.Builder(this);
+		builder.setMessage(getString(R.string.no_wifi))
+				.setCancelable(true)
+				.setPositiveButton(getString(R.string.button_exit),
+						new DialogInterface.OnClickListener() {
+							public void onClick(DialogInterface dialog, int id) {
+								adbWireless.this.finish();
+							}
+						})
+				.setNegativeButton(R.string.button_activate_wifi,
+						new DialogInterface.OnClickListener() {
+							public void onClick(DialogInterface dialog, int id) {
+								enableWiFi(true);
+								dialog.cancel();
+
+							}
+						});
+		builder.setIcon(android.R.drawable.ic_dialog_alert);
+		builder.create();
+		builder.setTitle(R.string.no_wifi_title);
+		builder.show();
+
+	}
+
 	@Override
-	public void onDestroy() {
+	protected void onResume() {
+		SharedPreferences settings = getSharedPreferences("wireless", 0);
+		mState = settings.getBoolean("mState", false);
+		wifiState = settings.getBoolean("wifiState", false);
+		
+		updateState();
+		super.onResume();
+	}
+
+
+
+	@Override
+	protected void onDestroy() {
+		
+			if (prefsWiFiOff() && !wifiState && checkWifiState()){
+				enableWiFi(false);
+			}
+				
+			try {
+				adbStop();
+				
+			} catch (Exception e) {
+			}
+
+			try {
+				mNotificationManager.cancelAll();
+			} catch (Exception e) {
+			}
+		
 		super.onDestroy();
-
-		try {
-			adbStop();
-		} catch (Exception e) {
-		}
-
-		try {
-			mNotificationManager.cancelAll();
-		} catch (Exception e) {
-		}
 	}
 
 	@Override
@@ -376,12 +418,25 @@ public class adbWireless extends Activity {
 				+ ((ip >> 16) & 0xFF) + "." + ((ip >> 24) & 0xFF);
 	}
 
+	private void enableWiFi(boolean enable) {
+		
+		if (enable) {
+			Toast.makeText(getBaseContext(), R.string.Turning_on_wifi,
+					Toast.LENGTH_LONG).show();
+		} else {
+			Toast.makeText(getBaseContext(), R.string.Turning_off_wifi,
+					Toast.LENGTH_LONG).show();
+		}
+		mWifiManager.setWifiEnabled(enable);
+	}
+
 	private boolean checkWifiState() {
 		try {
 			WifiInfo wifiInfo = mWifiManager.getConnectionInfo();
 			if (!mWifiManager.isWifiEnabled() || wifiInfo.getSSID() == null) {
 				return false;
 			}
+
 			return true;
 		} catch (Exception e) {
 			return false;
@@ -450,6 +505,21 @@ public class adbWireless extends Activity {
 				.getDefaultSharedPreferences(this);
 		return pref.getBoolean(
 				getResources().getString(R.string.pref_haptic_key), false);
+	}
+
+	private boolean prefsWiFiOn() {
+		SharedPreferences pref = PreferenceManager
+				.getDefaultSharedPreferences(this);
+		return pref.getBoolean(
+				getResources().getString(R.string.pref_wifi_on_key), false);
+	}
+
+	private boolean prefsWiFiOff() {
+		SharedPreferences pref = PreferenceManager
+				.getDefaultSharedPreferences(this);
+		return pref.getBoolean(
+				getResources().getString(R.string.pref_wifi_off_key), false);
+		
 	}
 
 }

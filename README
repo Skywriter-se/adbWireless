@@ -6,12 +6,15 @@ used a method already known to enable the wireless connection through:
 04-10-2010: http://goo.gl/Z03r
 04-12-2010: http://goo.gl/GoyF
 
-Change log v1.2.1 by Filip
+Change log v1.2.1 by Skywriter
 
 Portrait only 
 Added haptic feedback and made it optional
-Turn USB-debugging back on in adbstop()
-Save mState to get true indication if running or not when the app starts.
+Fix USB-debugging issue 
+Save State to get true indication if running or not when the app starts.
+
+Change log v1.3 by Skywriter
+Automatic WiFi control
 
 Rooted Phone Only!!!
 

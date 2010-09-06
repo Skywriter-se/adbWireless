@@ -31,51 +31,63 @@ public final class R {
         public static final int main=0x7f030000;
     }
     public static final class string {
-        public static final int Turning_off=0x7f050014;
-        public static final int Turning_on=0x7f050013;
-        public static final int about=0x7f050010;
+        public static final int Turning_off=0x7f050016;
+        public static final int Turning_off_wifi=0x7f050018;
+        public static final int Turning_on=0x7f050015;
+        public static final int Turning_on_wifi=0x7f050017;
+        public static final int about=0x7f050012;
         public static final int app_name=0x7f050000;
+        public static final int auto_wifi=0x7f05000e;
+        public static final int button_activate_wifi=0x7f050009;
         public static final int button_close=0x7f050006;
         public static final int button_continue=0x7f050008;
         public static final int button_exit=0x7f050007;
-        public static final int default_haptic=0x7f050021;
-        public static final int default_noti=0x7f050020;
+        public static final int default_haptic=0x7f050029;
+        public static final int default_noti=0x7f050028;
         /**  Defaults 
          */
-        public static final int default_port=0x7f05001d;
-        public static final int default_sound=0x7f05001f;
-        public static final int default_vibrate=0x7f05001e;
+        public static final int default_port=0x7f050025;
+        public static final int default_sound=0x7f050027;
+        public static final int default_vibrate=0x7f050026;
+        public static final int default_wifi_off=0x7f05002b;
+        public static final int default_wifi_on=0x7f05002a;
         public static final int footer_text_1=0x7f050002;
         public static final int footer_text_2=0x7f050003;
         public static final int footer_text_3=0x7f050004;
         public static final int footer_text_off=0x7f050005;
-        public static final int haptic=0x7f05001b;
-        public static final int menu_about=0x7f05000e;
-        public static final int menu_exit=0x7f05000f;
-        public static final int menu_prefs=0x7f05000d;
-        public static final int no_root=0x7f05000a;
-        public static final int no_root_title=0x7f050009;
-        public static final int no_wifi=0x7f05000c;
-        public static final int no_wifi_title=0x7f05000b;
-        public static final int noti_text=0x7f050011;
-        public static final int notification=0x7f050019;
-        public static final int pref_haptic_key=0x7f050026;
-        public static final int pref_noti_key=0x7f050025;
+        public static final int haptic=0x7f05001f;
+        public static final int menu_about=0x7f050010;
+        public static final int menu_exit=0x7f050011;
+        public static final int menu_prefs=0x7f05000f;
+        public static final int no_root=0x7f05000b;
+        public static final int no_root_title=0x7f05000a;
+        public static final int no_wifi=0x7f05000d;
+        public static final int no_wifi_title=0x7f05000c;
+        public static final int noti_text=0x7f050013;
+        public static final int notification=0x7f05001d;
+        public static final int pref_haptic_key=0x7f050030;
+        public static final int pref_noti_key=0x7f05002f;
         /**  Keys 
          */
-        public static final int pref_port_key=0x7f050022;
-        public static final int pref_sound_key=0x7f050024;
-        public static final int pref_vibrate_key=0x7f050023;
-        public static final int server_haptic=0x7f05001c;
-        public static final int server_noti=0x7f05001a;
-        public static final int server_sound=0x7f050018;
-        public static final int server_vibrate=0x7f050016;
-        public static final int settings_title=0x7f050012;
-        public static final int sound=0x7f050017;
+        public static final int pref_port_key=0x7f05002c;
+        public static final int pref_sound_key=0x7f05002e;
+        public static final int pref_vibrate_key=0x7f05002d;
+        public static final int pref_wifi_off_key=0x7f050032;
+        public static final int pref_wifi_on_key=0x7f050031;
+        public static final int server_haptic=0x7f050020;
+        public static final int server_noti=0x7f05001e;
+        public static final int server_sound=0x7f05001c;
+        public static final int server_vibrate=0x7f05001a;
+        public static final int server_wifi_off=0x7f050024;
+        public static final int server_wifi_on=0x7f050022;
+        public static final int settings_title=0x7f050014;
+        public static final int sound=0x7f05001b;
         public static final int top_text=0x7f050001;
         /**  Settings 
          */
-        public static final int vibrate=0x7f050015;
+        public static final int vibrate=0x7f050019;
+        public static final int wifi_off=0x7f050023;
+        public static final int wifi_on=0x7f050021;
     }
     public static final class xml {
         public static final int preferences=0x7f040000;

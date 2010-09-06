@@ -1,63 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
-    
-    <string name="app_name">adbWireless</string>
-    <string name="top_text">Welcome to adbWireless, you can enable or disable the wireless connection ADB interface by pressing the big button.</string>
-    
-    <string name="footer_text_1">adbWireless is on, from your computer run:</string>
-    <string name="footer_text_2"></string>
-    <string name="footer_text_3">And you can use ADB as if connected by USB</string>
-    <string name="footer_text_off">adbWireless is off</string>
-    
-    <string name="button_close">Close</string>
-    <string name="button_exit">Exit</string>
-    <string name="button_continue">Continue</string>
-    
-    <string name="no_root_title">Not Root!</string>
-    <string name="no_root">Ops! Sorry, but your kernel does not have all necessary features for running this application, you need rooted phone.</string>
-    
-    <string name="no_wifi_title">Not Wireless!</string>
-    <string name="no_wifi">Ops! Sorry, but your wireless is off, you need the active wireless connection to use adbWireless.</string>
-    
-    
-    <string name="menu_prefs">Preferences</string>
-    <string name="menu_about">About</string>
-    <string name="menu_exit">Exit</string>
-    
-    <string name="about">adbWireless enable ADB wireless connection to connect to the phone as if connected by USB.</string>
-    
-    <string name="noti_text">adbWireless is running</string>
-    
-    <string name="settings_title">Preferences</string>
-    
-    <string name="Turning_on">Turning on wireless connection</string>
-    <string name="Turning_off">Turning off wireless connection</string>
-    
-    <!-- Settings -->
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+	<string name="app_name">adbWireless</string>
+	<string name="top_text">Welcome to adbWireless, you can enable or disable
+		the wireless connection ADB interface by pressing the big button.
+	</string>
+
+	<string name="footer_text_1">adbWireless is on, from your computer run:</string>
+	<string name="footer_text_2"></string>
+	<string name="footer_text_3">And you can use ADB as if connected by USB</string>
+	<string name="footer_text_off">adbWireless is off</string>
+
+	<string name="button_close">Close</string>
+	<string name="button_exit">Exit</string>
+	<string name="button_continue">Continue</string>
+	<string name="button_activate_wifi">Activate WiFi</string>
+
+	<string name="no_root_title">Not Root!</string>
+	<string name="no_root">Ops! Sorry, but your kernel does not have all
+		necessary features for running this application, you need rooted
+		phone.</string>
+
+	<string name="no_wifi_title">No Wireless!</string>
+	<string name="no_wifi">Ops! Sorry, but WiFi is off, you need the
+		active
+		WiFi to use adbWireless.</string>
+	<string name="auto_wifi">Automatically activate WiFi</string>
+
+	<string name="menu_prefs">Preferences</string>
+	<string name="menu_about">About</string>
+	<string name="menu_exit">Exit</string>
+
+	<string name="about">adbWireless enable ADB wireless connection to
+		connect to the phone as if connected by USB.</string>
+
+	<string name="noti_text">adbWireless is running</string>
+
+	<string name="settings_title">Preferences</string>
+
+	<string name="Turning_on">Turning on wireless connection</string>
+	<string name="Turning_off">Turning off wireless connection</string>
+
+	<string name="Turning_on_wifi">Turning on WiFi</string>
+	<string name="Turning_off_wifi">Turning off WiFi</string>
+
+	<!-- Settings -->
 	<string name="vibrate">Vibrate</string>
 	<string name="server_vibrate">When the connection active</string>
-	
+
 	<string name="sound">Sound</string>
 	<string name="server_sound">When the connection active</string>
-	
+
 	<string name="notification">Notification</string>
 	<string name="server_noti">When the connection active</string>
-	
+
 	<string name="haptic">Haptic feedback</string>
 	<string name="server_haptic">On button press</string>
-    
+
+	<string name="wifi_on">WiFi auto on</string>
+	<string name="server_wifi_on">Turn on WiFi when app starts</string>
+
+	<string name="wifi_off">WiFi auto off</string>
+	<string name="server_wifi_off">Turn off WiFi on app exit if it was off at app start
+	</string>
+
 	<!-- Defaults -->
 	<string name="default_port">8085</string>
 	<string name="default_vibrate">true</string>
 	<string name="default_sound">true</string>
 	<string name="default_noti">true</string>
 	<string name="default_haptic">true</string>
-	
+	<string name="default_wifi_on">false</string>
+	<string name="default_wifi_off">true</string>
+
 	<!-- Keys -->
 	<string name="pref_port_key">key_port</string>
 	<string name="pref_vibrate_key">key_vibrate</string>
 	<string name="pref_sound_key">key_sound</string>
 	<string name="pref_noti_key">key_noti</string>
 	<string name="pref_haptic_key">key_haptic</string>
-    
+	<string name="pref_wifi_on_key">key_wifi_on</string>
+	<string name="pref_wifi_off_key">key_wifi_off</string>
+
 </resources>

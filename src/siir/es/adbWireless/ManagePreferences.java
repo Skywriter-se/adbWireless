@@ -14,6 +14,9 @@ public class ManagePreferences extends PreferenceActivity
 	private CheckBoxPreference mPreferenceSound;
 	private CheckBoxPreference mPreferenceNoti;
 	private CheckBoxPreference mPreferenceHaptic;
+	private CheckBoxPreference mPreferenceWiFiOff;
+	private CheckBoxPreference mPreferenceWiFiOn;
+	
 	private SharedPreferences mPreferences;
 
 	@Override
@@ -25,7 +28,9 @@ public class ManagePreferences extends PreferenceActivity
 		mPreferenceVibrate = (CheckBoxPreference) findPreference(getResources().getString(R.string.pref_vibrate_key));
 		mPreferenceSound = (CheckBoxPreference) findPreference(getResources().getString(R.string.pref_sound_key));
 		mPreferenceNoti = (CheckBoxPreference) findPreference(getResources().getString(R.string.pref_noti_key));
-		mPreferenceNoti = (CheckBoxPreference) findPreference(getResources().getString(R.string.pref_haptic_key));
+		mPreferenceHaptic = (CheckBoxPreference) findPreference(getResources().getString(R.string.pref_haptic_key));
+		mPreferenceWiFiOff = (CheckBoxPreference) findPreference(getResources().getString(R.string.pref_wifi_off_key));
+		mPreferenceWiFiOn = (CheckBoxPreference) findPreference(getResources().getString(R.string.pref_wifi_on_key));
 		
 	}
 }

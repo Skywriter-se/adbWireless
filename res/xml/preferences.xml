@@ -20,6 +20,14 @@
 		<CheckBoxPreference android:key="@string/pref_haptic_key"
 			android:title="@string/haptic" android:defaultValue="@string/default_haptic"
 			android:summary="@string/server_haptic" />
+			
+		<CheckBoxPreference android:key="@string/pref_wifi_on_key"
+			android:title="@string/wifi_on" android:defaultValue="@string/default_wifi_on"
+			android:summary="@string/server_wifi_on" />
+			
+		<CheckBoxPreference android:key="@string/pref_wifi_off_key"
+			android:title="@string/wifi_off" android:defaultValue="@string/default_wifi_off"
+			android:summary="@string/server_wifi_off" />
 
 	</PreferenceCategory>
 
